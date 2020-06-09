@@ -4,7 +4,10 @@
       <fieldset>
         <div class="pure-control-group">
           <label for="todo-title" class="label">Todo Task Title</label>
-          <input type="text" id="todo-title" placeholder="todo title" v-model="form.title" />
+          <input type="text" 
+            id="todo-title" 
+            placeholder="todo title" 
+            v-model="form.title" />
           <span class="pure-form-message-inline">This field is required!</span>
         </div>
 

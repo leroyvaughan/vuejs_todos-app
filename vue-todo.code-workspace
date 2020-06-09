@@ -5,7 +5,7 @@
 		}
 	],
 	"settings": {
-		"editor.formatOnSave": true,
+		"editor.formatOnSave": false,
 		"javascript.format.enable": true,
 		"eslint.autoFixOnSave": true,
 		"eslint.alwaysShowStatus": true,
