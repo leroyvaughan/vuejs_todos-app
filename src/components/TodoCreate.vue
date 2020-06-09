@@ -1,16 +1,10 @@
 <template>
   <modal ref="modal">
-
     <form class="pure-form pure-form-stacked">
-
       <fieldset>
         <div class="pure-control-group">
           <label for="todo-title" class="label">Todo Task Title</label>
-          <input 
-            type="text" 
-            id="todo-title" 
-            placeholder="todo title" 
-            v-model="form.title" />
+          <input type="text" id="todo-title" placeholder="todo title" v-model="form.title" />
           <span class="pure-form-message-inline">This field is required!</span>
         </div>
 
@@ -20,20 +14,16 @@
             type="text"
             id="todo-description"
             placeholder="todo description"
-            v-model="form.description" />
+            v-model="form.description"
+          />
           <span class="pure-form-message-inline">This field is required!</span>
         </div>
-
       </fieldset>
-      
+
       <fieldset>
-        <button type="button" 
-          class="pure-button pure-button-primary" 
-          @click="createTodo">Save</button>
+        <button type="button" class="pure-button pure-button-primary" @click="createTodo">Save</button>
       </fieldset>
-      
     </form>
-
   </modal>
 </template>
 
@@ -47,20 +37,22 @@ export default {
   data() {
     return {
       form: {
-        title: "k", 
-        description: "k"
+        title: "",
+        description: ""
       }
     };
   },
   computed: {
-    isFormValid(){
-      return (this.form.title && this.form.description)? true : false
+    isFormValid() {
+      return this.form.title && this.form.description ? true : false;
     },
-    modal(){ return this.$refs.modal; }
+    modal() {
+      return this.$refs.modal;
+    }
   },
   methods: {
     createTodo() {
-      if(this.isFormValid){
+      if (this.isFormValid) {
         this.$emit("formSubmit", this.form);
         this.form = {};
         this.modal.closeModal();
@@ -77,7 +69,7 @@ export default {
       border: 1px solid #ccc;
       border-radius: 7px;
       text-align: left;
-      padding: .3rem .7rem;
+      padding: 0.3rem 0.7rem;
       width: 90%;
 
       fieldset {
@@ -97,8 +89,6 @@ export default {
         font-size: small;
       }
     }
-
-
   }
 } //end modal
 </style>
