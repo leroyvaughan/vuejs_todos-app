@@ -47,7 +47,7 @@ const store = {
     updateTodo(state, curTodo) {//dispatched in TodoItem.vue
       //setting index to anonymous function here
       const ix = state.todos.findIndex((todo) => {
-        return todo._id === curTodo._id;       
+        return todo._id === curTodo._id;
       })
 
       //calling function here in Vue reactive update
@@ -58,7 +58,7 @@ const store = {
       const ix = state.todos.findIndex((todo) => {
         return todo._id === curTodo._id;
       })
-      
+
       Vue.delete(state.todos, ix);
       return state.todos;
     }
@@ -76,7 +76,7 @@ store.dispatch = function (action, payload) {
   const result = this.actions[action](this.state, payload);
 
   if (!result) return;
-  
+
   persistData(result);
 
   return result;
